@@ -1,0 +1,137 @@
+1.)
+/*
+        Calculate Circle Area using Java Example
+        This Calculate Circle Area using Java Example shows how to calculate
+        area of circle using it's radius.
+*/
+ 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+ 
+public class CalculateCircleAreaExample {
+ 
+        public static void main(String[] args) {
+               
+                int radius = 0;
+                System.out.println("Please enter radius of a circle");
+               
+                try
+                {
+                        //get the radius from console
+                        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+                        radius = Integer.parseInt(br.readLine());
+                }
+                //if invalid value was entered
+                catch(NumberFormatException ne)
+                {
+                        System.out.println("Invalid radius value" + ne);
+                        System.exit(0);
+                }
+                catch(IOException ioe)
+                {
+                        System.out.println("IO Error :" + ioe);
+                        System.exit(0);
+                }
+               
+                /*
+                 * Area of a circle is
+                 * pi * r * r
+                 * where r is a radius of a circle.
+                 */
+               
+                //NOTE : use Math.PI constant to get value of pi
+                double area = Math.PI * radius * radius;
+               
+                System.out.println("Area of a circle is " + area);
+        }
+}
+ 
+/*
+Output of Calculate Circle Area using Java Example would be
+Please enter radius of a circle
+19
+Area of a circle is 1134.1149479459152
+*/
+
+
+
+
+
+2.)
+/*
+        Generate Pyramid For a Given Number Example
+        This Java example shows how to generate a pyramid of numbers for given
+        number using for loop example.
+*/
+ 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+ 
+public class GeneratePyramidExample {
+       
+        public static void main (String[] args) throws Exception{
+               
+                BufferedReader keyboard = new BufferedReader (new InputStreamReader (System.in));
+               
+                System.out.println("Enter Number:");
+                int as= Integer.parseInt (keyboard.readLine());
+                System.out.println("Enter X:");
+                int x=   Integer.parseInt (keyboard.readLine());
+                 
+                int y = 0;
+               
+                for(int i=0; i<= as ;i++){
+                       
+                        for(int j=1; j <= i ; j++){
+                                System.out.print(y + "\t");
+                                y = y + x;
+                        }
+                       
+                        System.out.println("");
+                }
+        }
+}
+
+
+
+
+
+3.)
+/* Java program which takes the number of inputs first and then the numbers to be sorted*/
+import java.util.Scanner;
+
+class BubbleSortExample {
+  public static void main(String []args) {
+    int num, i, j, temp;
+    Scanner input = new Scanner(System.in);
+ 
+    System.out.println("Enter the number of integers to sort:");
+    num = input.nextInt();
+ 
+    int array[] = new int[num];
+ 
+    System.out.println("Enter " + num + " integers: ");
+ 
+    for (i = 0; i < num; i++) 
+      array[i] = input.nextInt();
+ 
+    for (i = 0; i < ( num - 1 ); i++) {
+      for (j = 0; j < num - i - 1; j++) {
+        if (array[j] > array[j+1]) 
+        {
+           temp = array[j];
+           array[j] = array[j+1];
+           array[j+1] = temp;
+        }
+      }
+    }
+ 
+    System.out.println("Sorted list of integers:");
+ 
+    for (i = 0; i < num; i++) 
+      System.out.println(array[i]);
+  }
+}
+
+
